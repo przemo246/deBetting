@@ -1,0 +1,50 @@
+{
+  "name": "frontend_client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:prod": "tsc && vite build --mode prod",
+    "preview": "vite preview",
+    "start:prod": "serve -s dist -p 3000"
+  },
+  "dependencies": {
+    "@usedapp/core": "^1.2.0",
+    "clsx": "^1.2.1",
+    "daisyui": "^2.38.0",
+    "eth-revert-reason": "^1.0.3",
+    "ethers": "^5.1.1",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-countdown": "^2.3.3",
+    "react-daisyui": "^2.4.6",
+    "react-dom": "^18.2.0",
+    "react-dropdown": "^1.11.0",
+    "react-icons": "^4.6.0",
+    "react-router-dom": "^6.4.3",
+    "serve": "^14.0.1",
+    "siwe": "^1.1.6",
+    "swr": "^1.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "@vitejs/plugin-react": "^2.2.0",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "postcss": "^8.4.18",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.2.1",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.0",
+    "vite-tsconfig-paths": "^3.5.2"
+  }
+}

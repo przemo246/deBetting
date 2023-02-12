@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  server:
+    depends_on:
+      - database_prod
+    build: ./backend_server
+    restart: unless-stopped
+    ports:
+      - 3030:3030
+    networks:
+      - server
+      - client
+    env_file:
+      - ./backend_server/.env
+
+  client:
+    depends_on:
+      - server
+    build:
+      context: ./frontend_client
+    ports:
+      - 3000:3000
+    networks:
+      - client
+
+  database_prod:
+    container_name: database_prod
+    image: "postgres:latest"
+    ports:
+      - 5432:5432
+    env_file:
+      - ./backend_server/.env
+    volumes:
+      - db-data/:/var/lib/postgresql/data/
+    networks:
+      - server
+
+networks:
+  server:
+  client:
+
+volumes:
+  db-data:

@@ -1,0 +1,45 @@
+{
+  "name": "backend-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.ts",
+  "engines": {
+    "node": "18"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "docker-compose up -d && tsnd --files --clear --exit-child src/server.ts",
+    "build": "tsc",
+    "sync": "ts-node --files src/scripts/sync.ts",
+    "sync:prod": "node dist/src/scripts/sync.js",
+    "start:prod": "node dist/src/server.js",
+    "start:prod:setup": "prisma migrate deploy && npm run sync:prod && npm run start:prod"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/node": "^18.11.9",
+    "@types/node-cron": "^3.0.6",
+    "@types/node-fetch": "^2.6.2",
+    "prisma": "^4.5.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.5.0",
+    "cors": "^2.8.5",
+    "ethers": "^5.5.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "node-cron": "^3.0.2",
+    "node-fetch": "^2.6.7",
+    "siwe": "^1.1.6"
+  }
+}
